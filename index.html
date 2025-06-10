@@ -29,101 +29,144 @@
       font-weight: bold;
       color: #6c757d;
     }
+
+    #invitacion {
+      display: none;
+    }
   </style>
 </head>
 
 <body>
   <div class="container-fluid">
-    <!-- Video -->
-    <div class="ratio ratio-16x9 mt-3">
-      <video class="object-fit-cover" autoplay loop muted playsinline>
-        <source src="video.mp4" type="video/mp4">
-        Tu navegador no soporta el video HTML5.
-      </video>
+    <!-- Efecto papel -->
+    <div id="cover" class="text-center mt-5">
+      <h2>📜 Invitación de boda</h2>
+      <button class="btn btn-primary mt-3" onclick="abrirInvitacion()">Abrir invitación</button>
     </div>
 
-    <!-- Cards -->
-    <div class="row mt-4 g-3">
-      <!-- Bienvenida -->
-      <div class="col-12">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title">Boda Rubén y Cianny</h5>
-            <p class="card-text">¡Nos casamos! Estás cordialmente invitado a compartir con nosotros este día tan especial.</p>
+    <div id="invitacion">
+      <!-- Video inicial -->
+      <div class="ratio ratio-16x9 mt-3">
+        <video class="object-fit-cover" autoplay loop muted playsinline>
+          <source src="video.mp4" type="video/mp4">
+          Tu navegador no soporta el video HTML5.
+        </video>
+      </div>
+
+      <!-- Audio de fondo -->
+      <audio id="audio" loop>
+        <source src="audio.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio.
+      </audio>
+
+      <!-- Tarjetas de información -->
+      <div class="row mt-4 g-3">
+        <div class="col-12">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Boda Rubén y Cianny</h5>
+              <p class="card-text">¡Nos casamos! Estás cordialmente invitado a compartir con nosotros este día tan especial.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">📅 Fecha</h5>
+              <p class="card-text">23 de noviembre de 2025 - 2:15 PM</p>
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Rubén+y+Cianny&dates=20251123T141500Z/20251123T160000Z&details=Nos+casamos+en+Villa+Tremedal&location=Villa+Tremedal&sf=true&output=xml" target="_blank" class="btn btn-outline-secondary mt-2">Agregar al calendario</a>
+              <a href="boda.ics" download class="btn btn-outline-secondary mt-2">Descargar evento (.ics)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">📍 Ubicación</h5>
+              <p class="card-text"><a href="https://maps.app.goo.gl/fDBP156EuTrZGzSa9" target="_blank">Villa Tremedal</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">👗 Código de Vestimenta</h5>
+              <p class="card-text">Formal (no blanco, sin tacón delgado). Llevar abrigo por clima frío.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">🎁 Regalos</h5>
+              <p class="card-text">8541-6857 o en sobres disponibles a la entrada del evento.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">⏳ Cuenta Regresiva</h5>
+              <p class="card-text" id="countdown">Cargando cuenta regresiva...</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Fecha -->
-      <div class="col-12 col-md-6">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title">📅 Fecha</h5>
-            <p class="card-text">23 de noviembre de 2025</p>
-          </div>
+      <!-- Formulario confirmación -->
+      <div class="card text-center mt-4">
+        <div class="card-body">
+          <h5 class="card-title">💌 Confirmación de asistencia</h5>
+          <form action="https://formspree.io/f/mwkgyqjq" method="POST">
+            <div class="mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="Nombre completo" required>
+            </div>
+            <div class="mb-3">
+              <select name="asistencia" class="form-select" required>
+                <option value="">¿Asistirás?</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <input type="text" name="restricciones" class="form-control" placeholder="¿Tienes alguna restricción alimentaria?">
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+          </form>
         </div>
       </div>
 
-      <!-- Ubicación -->
-      <div class="col-12 col-md-6">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title">📍 Ubicación</h5>
-            <p class="card-text"><a href="https://maps.app.goo.gl/fDBP156EuTrZGzSa9" target="_blank">Villa Tremedal</a></p>
-          </div>
+      <!-- Galería de fotos -->
+      <div class="row text-center mt-5">
+        <h5>📸 Algunas fotos especiales</h5>
+        <div class="col-12 col-sm-6 col-md-4 mt-3 fade-in">
+          <img src="foto1.jpeg" class="img-fluid rounded shadow" alt="Foto 1">
         </div>
-      </div>
-
-      <!-- Vestimenta -->
-      <div class="col-12 col-md-6">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title">👗 Código de Vestimenta</h5>
-            <p class="card-text">Formal (no blanco, sin tacón delgado). Llevar abrigo por clima frío.</p>
-          </div>
+        <div class="col-12 col-sm-6 col-md-4 mt-3 fade-in">
+          <img src="foto2.jpeg" class="img-fluid rounded shadow" alt="Foto 2">
         </div>
-      </div>
-
-      <!-- Regalos -->
-      <div class="col-12 col-md-6">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title">🎁 Regalos</h5>
-            <p class="card-text">8541-6857 o en sobres disponibles a la entrada del evento.</p>
-          </div>
+        <div class="col-12 col-sm-6 col-md-4 mt-3 fade-in">
+          <img src="foto3.jpeg" class="img-fluid rounded shadow" alt="Foto 3">
         </div>
-      </div>
-
-      <!-- Cuenta regresiva -->
-      <div class="col-12">
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title">⏳ Cuenta Regresiva</h5>
-            <p class="card-text" id="countdown">Cargando cuenta regresiva...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Galería de fotos -->
-    <div class="row text-center mt-5">
-      <h5>📸 Algunas fotos especiales</h5>
-      <div class="col-12 col-sm-6 col-md-4 mt-3 fade-in">
-        <img src="foto1.jpeg" class="img-fluid rounded shadow" alt="Foto 1">
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 mt-3 fade-in">
-        <img src="foto2.jpeg" class="img-fluid rounded shadow" alt="Foto 2">
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 mt-3 fade-in">
-        <img src="foto3.jpeg" class="img-fluid rounded shadow" alt="Foto 3">
       </div>
     </div>
   </div>
 
-  <!-- Cuenta regresiva JS -->
   <script>
+    function abrirInvitacion() {
+      document.getElementById('cover').style.display = 'none';
+      document.getElementById('invitacion').style.display = 'block';
+      const audio = document.getElementById('audio');
+      if (audio) audio.play();
+    }
+
     const countdown = document.getElementById('countdown');
-    const targetDate = new Date("2025-11-23T00:00:00").getTime();
+    const targetDate = new Date("2025-11-23T14:15:00-06:00").getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
