@@ -1,0 +1,234 @@
+#titulo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.3em;
+    color: #000;
+}
+
+#titulox {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    color: #000;
+}
+
+#div-titulo{
+    padding: 15px;
+    margin-top: -5vh;
+    /* background: linear-gradient(0deg, rgba(180,176,176,1) 0%,  rgba(54,37,54,1) 100%);
+    /* linear-gradient(0deg, rgba(180,176,176,1) 0%, rgba(196,196,196,1) 23%, rgba(113,113,113,1) 100%);     */
+    /*-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+#div-titulo p{
+    color: #362536;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+.nombre {
+    font-family: "Gwendolyn", cursive;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #000;
+    filter: brightness(1.75);
+    text-shadow: 5px 5px #58616a;
+    /*#d68c9d*/
+}
+
+.nombre2 {
+    font-family: 'Great Vibes', cursiva;
+    text-transform: capitalize;
+    color: #d68c9d;
+}
+
+header#intro{
+    margin-top: 10em;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds,
+#separador {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    color: #000;
+}
+
+#nombreClock {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    color: #000;
+    text-transform: uppercase
+}
+.fecha{
+    color: #000; font-size: 1.5em; font-family: montserrat; text-transform: uppercase;
+}
+
+.fecha span{
+    font-size: 0.7em;
+}
+
+#imageFile{
+    display: none;
+    margin-bottom: 2vh;
+}
+
+.de-button{
+    display: inline-block;
+    margin: 0 auto;
+    margin: 0 10px 20px 0;
+    background-color: #666666 !important;
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border: solid 1px;
+    text-decoration: none;
+}
+
+#staticBackdropLabel{
+    color: #362536; 
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.foto{
+    margin-bottom: 300px; 
+    height: 100px; 
+    width: 100px; 
+    float: left; 
+    margin: 8px
+}
+
+#preloader{
+    background-color: #c7c4c4c2;
+    position: fixed;
+    z-index: 1000;
+    height: 100vh;
+    width: 100vw;
+}
+
+.showLoader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hideLoader{
+    display: none;
+}
+
+#preloader img{
+    width: 30vw;
+}
+
+.agregar-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #4a4a4a !important;
+    text-decoration: none;
+    border-radius: 5px;
+    border: solid 0px #c4c4c4;
+    margin-bottom: 20px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#verMesa{
+    background-color: transparent !important; 
+    border-color: #362536; 
+    border-radius: 7px;
+    color: #362536;
+}
+
+#pases{
+    background-image: url(../images/ticket.png);
+    background-size: 90vw;
+    height: 40vh;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 736px) {
+    #days,
+    #hours,
+    #minutes,
+    #seconds,
+    #separador {
+        font-family: 'Amita';
+        font-size: 1.5em;
+        color: #000;
+    }
+    #fecha .col-xs-2,
+    #fecha .col-xs-1 {
+        width: auto;
+        padding-right: calc(var(--bs-gutter-x) * .1);
+        padding-left: calc(var(--bs-gutter-x) * 0.1);
+    }
+    #fecha {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .nombre {
+        font-size: 8em;
+        /* margin-top: 1em; */
+    }
+    #titulo {
+        font-weight: 400;
+    }
+    #content-intro{
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #cuando{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        width: 80vw;
+        height: 10vh;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+    .direccion, #dresscode{
+        font-family: 'Raleway', sans-serif; font-weight: 400; text-align: center; color: #362536;
+    }
+    #lugar, #txtadult, #txtchild{
+        font-family: 'Great Vibes', cursiva; font-weight: 400; font-size: 2em; text-align: center; color: #000;
+    }
+    #adultos, #ninos{
+        font-family: 'Great Vibes', cursiva; font-weight: 400; font-size: 3em; text-align: center; color: #000;
+    }
+    #dresscode{
+        margin-bottom: 5vh !important;
+    }
+    .container{
+        display: block;
+        padding: 0 !important;
+    }
+    .oculto{
+        display: none;
+    }
+}
+@media screen and (min-width: 737px) {
+    .nombre {
+        font-size: 8em;
+        /* margin-top: 1.5em; */
+    }
+
+    .oculto{
+        display: block;
+        text-align: center;
+    }
+
+    .container{ 
+        display: none;
+    }
+}
