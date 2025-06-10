@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Boda</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f9f7f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .papel {
+      background-image: url('papel.jpg'); /* opcional */
+      padding: 2rem;
+      margin-top: 2rem;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 600px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cuadro {
+      border: 1px solid #ddd;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      background: white;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+    }
+    form input, form select {
+      width: 90%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      padding: 0.7rem 1.5rem;
+      background: #a67c52;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="papel">
+    <h1>Estás invitado a nuestra boda</h1>
+    <p>Con mucha alegría, te invitamos a compartir este día tan especial con nosotros.</p>
+
+    <div class="cuadro">
+      <h2>Fecha y hora</h2>
+      <p>Domingo, 23 de noviembre de 2025</p>
+      <p>2:15 p.m.</p>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda&dates=20251123T201500Z/20251123T221500Z&details=Nuestra+boda&location=&sf=true&output=xml" target="_blank">Agregar al Calendario</a>
+    </div>
+
+    <div class="cuadro">
+      <h2>Ubicación</h2>
+      <p>(Aquí puede ir la dirección exacta)</p>
+    </div>
+
+    <div class="cuadro">
+      <h2>Video</h2>
+      <iframe src="https://www.youtube.com/embed/9YcrMk_cZyI?start=6&autoplay=1&mute=1"></iframe>
+    </div>
+
+    <div class="cuadro">
+      <h2>Confirmar asistencia</h2>
+      <form action="https://example.com/submit" method="post">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <select name="asistencia" required>
+          <option value="">¿Asistirás?</option>
+          <option value="sí">Sí</option>
+          <option value="no">No</option>
+        </select>
+        <input type="text" name="restricciones" placeholder="¿Alguna restricción alimentaria?">
+        <button type="submit">Confirmar</button>
+      </form>
+    </div>
+
+    <div class="cuadro">
+      <h2>Regalos</h2>
+      <p>Podés colaborar al número: <strong>8541-6857</strong></p>
+      <p>También habrá sobres disponibles en la entrada de la boda.</p>
+    </div>
+
+    <div class="cuadro">
+      <h2>Código de vestimenta</h2>
+      <p>Formal</p>
+      <p><strong>Prohibido blanco</strong></p>
+      <p>Recomendación: Llevar abrigo (clima frío) y no usar tacón delgado (evento al aire libre).</p>
+    </div>
+  </div>
+
+</body>
+</html>
